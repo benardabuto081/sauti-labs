@@ -42,10 +42,10 @@ architectural principles.
 
 ## Branching
 
-- `master` — always stable, always working.
+- `main` — always stable, always working.
 - Feature work happens on branches named `type/short-description`
   (e.g. `feat/dataset-registry-schema`).
-- Branches are merged back into `master` only after verification.
+- Branches are merged back into `main` only after verification.
 
 ## Working on a Framework
 
