@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/dataset.schema.json",
+  "title": "Dataset",
+  "description": "Defines the required metadata structure for every dataset in the Sauti Labs platform, per the Sauti Codex Layer 3 specification. Traceability is mandatory.",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "name",
+    "languages",
+    "type",
+    "collection_method",
+    "license",
+    "version",
+    "status"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "description": "Unique identifier, e.g. 'kiswahili-broadcast-speech-v1'."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable dataset name."
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ISO codes of languages covered, cross-referenced to Codex Layer 2, e.g. ['sw']."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["speech", "text", "lexicon", "parallel_corpus", "annotation"],
+      "description": "The primary data modality."
+    },
+    "collection_method": {
+      "type": "string",
+      "enum": [
+        "broadcast_media",
+        "community_contribution",
+        "scripted_recording",
+        "web_scrape",
+        "government_document",
+        "literature",
+        "synthetic",
+        "other"
+      ]
+    },
+    "license": {
+      "type": "string",
+      "description": "License governing use of this dataset, e.g. 'CC-BY-4.0', 'proprietary'."
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of this dataset, e.g. '1.0.0'."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "collecting", "validating", "ready", "deprecated"]
+    },
+    "audio_hours": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total hours of audio, if applicable."
+    },
+    "text_size_tokens": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total token count, if applicable."
+    },
+    "contributors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "collection_date": {
+      "type": "string",
+      "description": "ISO 8601 date, e.g. '2026-07-11'."
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Quality score out of 100, per the Annotation Platform's quality scoring process."
+    },
+    "benchmark_results": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "models_using_it": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-reference to Codex Layer 4 model identifiers."
+    }
+  }
+}
