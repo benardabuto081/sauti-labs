@@ -1,0 +1,31 @@
+{
+  "language_name": "Kiswahili",
+  "iso_code": "sw",
+  "status": "active",
+  "research_stage": "corpus_collection",
+  "language_family": "Niger-Congo (Bantu)",
+  "countries": [
+    "Kenya",
+    "Tanzania",
+    "Uganda",
+    "Democratic Republic of the Congo",
+    "Rwanda",
+    "Burundi",
+    "Mozambique"
+  ],
+  "dialects": [
+    "Kiunguja",
+    "Kimvita",
+    "Kiamu",
+    "Kipemba"
+  ],
+  "writing_system": "Latin",
+  "number_of_speakers": 200000000,
+  "datasets": [],
+  "models": [],
+  "known_challenges": [
+    "Limited annotated speech corpora compared to global languages",
+    "Significant dialectal variation across East African regions",
+    "Code-switching with English in urban and digital contexts"
+  ]
+}
