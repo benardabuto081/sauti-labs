@@ -14,10 +14,16 @@
     "Mozambique"
   ],
   "dialects": [
-    "Kiunguja",
-    "Kimvita",
-    "Kiamu",
-    "Kipemba"
+    "Kiunguja (Zanzibar, basis of Standard Swahili)",
+    "Kimvita (Mombasa)",
+    "Kiamu (Lamu)",
+    "Kipate (Pate Island)",
+    "Kitikuu (Northern Kenyan coast)",
+    "Kivumba (Kenya-Tanzania border coast)",
+    "Kimrima (mainland Tanzanian coast)",
+    "Kipemba (Pemba Island)",
+    "Kimgao (Southern Tanzania)",
+    "Kingozi (classical literary variety)"
   ],
   "writing_system": "Latin",
   "number_of_speakers": 200000000,
@@ -25,7 +31,8 @@
   "models": [],
   "known_challenges": [
     "Limited annotated speech corpora compared to global languages",
-    "Significant dialectal variation across East African regions",
-    "Code-switching with English in urban and digital contexts"
+    "Significant dialectal variation across East African coastal communities, though most speakers today use Standard Swahili (Kiswahili Sanifu, based on Kiunguja) due to education and media",
+    "Code-switching with English in urban and digital contexts",
+    "Kingwana (eastern DRC) is heavily French- and Congolese-language-influenced and differs significantly from Standard Swahili; Kimwani (Mozambique) and the Comorian varieties (Shingazija, Shimwali, Shindzuani, Shimaore) are closely related but often classified as separate languages, not dialects of Kiswahili, and should be evaluated as their own future language programs rather than merged here"
   ]
 }

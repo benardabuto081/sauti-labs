@@ -1,0 +1,32 @@
+{
+  "language_name": "Dholuo",
+  "iso_code": "luo",
+  "status": "active",
+  "research_stage": "corpus_collection",
+  "language_family": "Nilo-Saharan (Western Nilotic, Luo)",
+  "countries": [
+    "Kenya",
+    "Tanzania"
+  ],
+  "dialects": [
+    "Jo-Kisumo",
+    "Jo-Alego",
+    "Jo-Gem",
+    "Jo-Karachuonyo",
+    "Jo-Nyakach",
+    "Jo-Ugenya",
+    "Jo-Kasipul",
+    "Suba (Olusuba, shifted community in Tanzania)"
+  ],
+  "writing_system": "Latin",
+  "number_of_speakers": 4200000,
+  "datasets": [],
+  "models": [],
+  "known_challenges": [
+    "Very limited digital text and speech resources compared to Bantu languages in the region",
+    "Tonal distinctions carry grammatical meaning, complicating text-to-speech and ASR modeling",
+    "Numerous regional accent variations within Kenya requiring balanced representation in training data",
+    "Dholuo is part of a wider Luo language family (including Acholi, Lango, Alur, Shilluk, Anuak in Uganda, South Sudan, and Ethiopia) that are related but not mutually intelligible and must be treated as separate future language programs, not merged with Dholuo",
+    "Few existing NLP tools or pretrained models to build upon"
+  ]
+}
