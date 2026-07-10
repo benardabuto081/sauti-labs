@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  repo-hygiene:
+    name: Repository Hygiene Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify core documentation exists
+        run: |
+          test -f README.md
+          test -f LICENSE
+          test -f docs/Architecture.md
+          test -f docs/Development.md
+          test -f docs/Contributing.md
+          test -f docs/architecture/ADR-0001.md
+          echo "All core documentation present."
+
+      - name: Verify no files use CRLF line endings
+        run: |
+          if grep -rlU $'\x0D' --include="*.md" --include="*.yml" --include="*.json" .; then
+            echo "ERROR: CRLF line endings found in the above files. Use LF only."
+            exit 1
+          fi
+          echo "Line endings verified clean (LF only)."
+
+      - name: Verify no files use non-UTF-8 encoding markers
+        run: |
+          if grep -rlP '^\xEF\xBB\xBF' --include="*.md" --include="*.yml" --include="*.json" .; then
+            echo "ERROR: UTF-8 BOM found in the above files. Save as UTF-8 without BOM."
+            exit 1
+          fi
+          echo "Encoding verified clean (UTF-8 without BOM)."
