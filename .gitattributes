@@ -1,0 +1,30 @@
+# Enforce LF line endings for all text files, regardless of contributor
+# OS or local Git configuration. This is the permanent, repository-level
+# fix — see docs/architecture/ADR-0001.md context on why encoding
+# consistency matters for a multilingual infrastructure project.
+
+* text=auto eol=lf
+
+# Explicit overrides for common text types
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Binary files must never be touched by line-ending conversion
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.wav binary
+*.mp3 binary
+*.flac binary
+*.pt binary
+*.onnx binary
+*.ckpt binary

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sauti-labs.dev/schemas/language-program.schema.json",
+  "title": "Language Program",
+  "description": "Defines the required metadata structure for every language program in the Sauti Labs platform, per the Sauti Codex Layer 2 specification.",
+  "type": "object",
+  "required": [
+    "language_name",
+    "iso_code",
+    "status",
+    "research_stage",
+    "language_family",
+    "countries",
+    "writing_system"
+  ],
+  "properties": {
+    "language_name": {
+      "type": "string",
+      "description": "The common English name of the language, e.g. 'Kiswahili'."
+    },
+    "iso_code": {
+      "type": "string",
+      "description": "ISO 639 language code, e.g. 'sw' for Kiswahili."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "research", "active", "mature", "paused"],
+      "description": "Current lifecycle status of the language program."
+    },
+    "research_stage": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "corpus_collection",
+        "annotation",
+        "model_development",
+        "benchmarking",
+        "production"
+      ]
+    },
+    "language_family": {
+      "type": "string",
+      "description": "Linguistic family, e.g. 'Niger-Congo (Bantu)'."
+    },
+    "countries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Countries where the language is primarily spoken."
+    },
+    "dialects": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "writing_system": {
+      "type": "string",
+      "description": "e.g. 'Latin', 'Ge'ez', 'Ajami'."
+    },
+    "number_of_speakers": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "datasets": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Identifiers of datasets belonging to this language program, cross-referenced in the Codex Layer 3."
+    },
+    "models": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Identifiers of models trained for this language, cross-referenced in the Codex Layer 4."
+    },
+    "known_challenges": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
