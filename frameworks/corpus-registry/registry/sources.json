@@ -14,6 +14,20 @@
       "digitization_method": "not_applicable",
       "linked_dataset_ids": [],
       "notes": "Identified as a candidate source due to high translation quality and full-text coverage in Dholuo, a severely under-resourced language. Status intentionally set to 'unknown_pending_review' and copyright_status left unresolved per corpus-registry's Copyright Discipline rule — must not be used to derive any dataset until formally cleared."
+    },
+    {
+      "source_id": "dholuo-african-storybook-collection-v1",
+      "title": "African Storybook Project - Dholuo Story Collection",
+      "languages": ["luo"],
+      "source_type": "educational_resource",
+      "author_or_publisher": "Saide (South African Institute for Distance Education) - African Storybook Initiative",
+      "publication_date": "2014",
+      "copyright_status": "licensed",
+      "license_details": "Creative Commons Attribution (CC BY) or CC BY-NC, applied per individual storybook. Openly licensed for use, distribution, and adaptation without requiring permission, provided attribution is given to authors, illustrators, translators, and the African Storybook initiative as publisher. Verified via africanstorybook.org and Creative Commons 'State of the Commons' feature (2017).",
+      "status": "identified",
+      "digitization_method": "born_digital",
+      "linked_dataset_ids": [],
+      "notes": "Confirmed via web search (2026-07-11) that the African Storybook Project publishes openly licensed children's storybooks in Dholuo among 236+ African languages. Each individual storybook's specific CC license variant (BY vs BY-NC) must be confirmed per-story before dataset derivation, since license terms are set per title rather than uniformly across the whole collection."
     }
   ]
 }

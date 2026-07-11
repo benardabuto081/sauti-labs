@@ -1,4 +1,21 @@
 {
   "$comment": "Central registry of all datasets across the Sauti Labs platform. Each entry must conform to frameworks/dataset-framework/schema/dataset.schema.json. This file is the single source of truth answered by Codex queries like 'what datasets does Dholuo have?'.",
-  "datasets": []
+  "datasets": [
+    {
+      "dataset_id": "dholuo-storybook-text-v1",
+      "name": "Dholuo African Storybook Text Corpus",
+      "languages": ["luo"],
+      "type": "text",
+      "collection_method": "community_contribution",
+      "license": "CC-BY-4.0",
+      "version": "1.0.0",
+      "status": "collecting",
+      "text_size_tokens": 0,
+      "contributors": ["Saide - African Storybook Initiative"],
+      "collection_date": "2026-07-11",
+      "quality_score": 0,
+      "benchmark_results": [],
+      "models_using_it": []
+    }
+  ]
 }
