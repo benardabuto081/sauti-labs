@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/benchmark-result.schema.json",
+  "title": "Benchmark Result",
+  "description": "Defines the required metadata for every benchmark run in the Sauti Labs platform, per the Master Blueprint Pillar II (Research) and Codex Layer 8. Enables queries like 'which language has the lowest benchmark score?' to be answered from verified, repeatable evaluation runs rather than self-reported training metrics.",
+  "type": "object",
+  "required": [
+    "benchmark_id",
+    "benchmark_suite",
+    "model_id",
+    "language",
+    "metric_name",
+    "metric_value",
+    "run_date",
+    "status"
+  ],
+  "properties": {
+    "benchmark_id": {
+      "type": "string",
+      "description": "Unique identifier for this specific benchmark run, e.g. 'kiswahili-asr-conformer-v1-commonvoice-2026-07-11'."
+    },
+    "benchmark_suite": {
+      "type": "string",
+      "description": "The name of the benchmark or test set used, e.g. 'FLEURS-sw', 'internal-broadcast-eval-v2'."
+    },
+    "model_id": {
+      "type": "string",
+      "description": "Cross-reference to a model-registry entry."
+    },
+    "dataset_id": {
+      "type": "string",
+      "description": "Cross-reference to the dataset-framework entry used as the evaluation set, if applicable."
+    },
+    "language": {
+      "type": "string",
+      "description": "ISO code of the language being evaluated, cross-referenced to Codex Layer 2."
+    },
+    "metric_name": {
+      "type": "string",
+      "enum": ["WER", "CER", "BLEU", "MOS", "F1", "accuracy", "latency_ms", "real_time_factor", "other"],
+      "description": "The evaluation metric type. WER/CER for speech recognition, BLEU for translation, MOS for TTS quality, etc."
+    },
+    "metric_value": {
+      "type": "number",
+      "description": "The numeric result of this metric."
+    },
+    "lower_is_better": {
+      "type": "boolean",
+      "description": "True for error rates (WER, CER), false for quality scores (BLEU, MOS, accuracy, F1)."
+    },
+    "run_date": {
+      "type": "string",
+      "description": "ISO 8601 date this benchmark was executed."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["scheduled", "running", "completed", "failed", "invalidated"]
+    },
+    "compute_environment": {
+      "type": "string",
+      "description": "e.g. 'A100-40GB', 'CPU-only-inference'."
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
