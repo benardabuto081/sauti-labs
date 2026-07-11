@@ -1,0 +1,4 @@
+{
+  "$comment": "Central registry of all written-text corpus sources across the Sauti Labs platform. Each entry must conform to frameworks/corpus-registry/schema/corpus-source.schema.json. Tracks provenance and copyright status distinct from dataset-framework's processed dataset registry.",
+  "sources": []
+}
