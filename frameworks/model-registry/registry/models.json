@@ -1,0 +1,4 @@
+{
+  "$comment": "Central registry of all models across the Sauti Labs platform. Each entry must conform to frameworks/model-registry/schema/model.schema.json. This is the single source of truth answered by Codex queries like 'what APIs depend on Translation Model V3?'.",
+  "models": []
+}

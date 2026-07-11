@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/model.schema.json",
+  "title": "Model",
+  "description": "Defines the required metadata for every model in the Sauti Labs platform, per the Sauti Codex Layer 4 specification and Master Blueprint Pillar IV (Speech, Language, Voice, Audio, and Multimodal Models).",
+  "type": "object",
+  "required": [
+    "model_id",
+    "name",
+    "model_family",
+    "purpose",
+    "supported_languages",
+    "architecture",
+    "version",
+    "deployment_status"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string",
+      "description": "Unique identifier, e.g. 'kiswahili-asr-conformer-v1'."
+    },
+    "name": {
+      "type": "string"
+    },
+    "model_family": {
+      "type": "string",
+      "enum": ["speech", "language", "voice", "audio", "multimodal"]
+    },
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "speech_recognition",
+        "streaming_recognition",
+        "speaker_recognition",
+        "speaker_diarization",
+        "speech_enhancement",
+        "large_language_model",
+        "translation",
+        "semantic_search",
+        "question_answering",
+        "text_to_speech",
+        "voice_cloning",
+        "voice_conversion",
+        "noise_reduction",
+        "audio_classification",
+        "source_separation",
+        "other"
+      ]
+    },
+    "supported_languages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ISO codes of languages this model supports, cross-referenced to Codex Layer 2."
+    },
+    "architecture": {
+      "type": "string",
+      "description": "e.g. 'Conformer', 'Transformer', 'VITS'."
+    },
+    "training_dataset_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-reference to dataset-framework registry entries used for training."
+    },
+    "evaluation_metrics": {
+      "type": "object",
+      "description": "Key-value pairs of metric name to value, e.g. { 'WER': 12.4, 'CER': 4.1 }."
+    },
+    "model_size_params": {
+      "type": "string",
+      "description": "e.g. '120M', '1.2B'."
+    },
+    "training_date": {
+      "type": "string",
+      "description": "ISO 8601 date."
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version, e.g. '1.0.0'."
+    },
+    "deployment_status": {
+      "type": "string",
+      "enum": ["research", "training", "evaluating", "staging", "production", "deprecated"]
+    },
+    "inference_speed": {
+      "type": "string",
+      "description": "e.g. 'real-time-factor 0.3x', '150ms latency'."
+    },
+    "research_paper_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "products_using_it": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "api_endpoint_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-reference to api-framework registry entries exposing this model."
+    }
+  }
+}
