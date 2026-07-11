@@ -26,7 +26,7 @@
       "license_details": "Creative Commons Attribution (CC BY) or CC BY-NC, applied per individual storybook. Openly licensed for use, distribution, and adaptation without requiring permission, provided attribution is given to authors, illustrators, translators, and the African Storybook initiative as publisher. Verified via africanstorybook.org and Creative Commons 'State of the Commons' feature (2017).",
       "status": "identified",
       "digitization_method": "born_digital",
-      "linked_dataset_ids": [],
+      "linked_dataset_ids": ["dholuo-storybook-text-v1"],
       "notes": "Confirmed via web search (2026-07-11) that the African Storybook Project publishes openly licensed children's storybooks in Dholuo among 236+ African languages. Each individual storybook's specific CC license variant (BY vs BY-NC) must be confirmed per-story before dataset derivation, since license terms are set per title rather than uniformly across the whole collection."
     }
   ]

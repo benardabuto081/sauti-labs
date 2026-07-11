@@ -20,7 +20,7 @@
   ],
   "writing_system": "Latin",
   "number_of_speakers": 4200000,
-  "datasets": [],
+  "datasets": ["dholuo-storybook-text-v1"],
   "models": [],
   "known_challenges": [
     "Very limited digital text and speech resources compared to Bantu languages in the region",
