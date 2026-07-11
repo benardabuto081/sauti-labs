@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/api-endpoint.schema.json",
+  "title": "API Endpoint",
+  "description": "Defines the required metadata for every API endpoint in the Sauti Labs platform, per the Master Blueprint's Developer Platform (Pillar V) and Codex Layer 5. Tracks what capabilities are exposed to developers, backed by which models.",
+  "type": "object",
+  "required": [
+    "endpoint_id",
+    "name",
+    "purpose",
+    "http_method",
+    "path",
+    "model_ids",
+    "authentication",
+    "status"
+  ],
+  "properties": {
+    "endpoint_id": {
+      "type": "string",
+      "description": "Unique identifier, e.g. 'kiswahili-asr-streaming-v1'."
+    },
+    "name": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string",
+      "description": "What this endpoint does, e.g. 'Real-time Kiswahili speech-to-text transcription.'"
+    },
+    "http_method": {
+      "type": "string",
+      "enum": ["GET", "POST", "PUT", "DELETE", "WEBSOCKET"]
+    },
+    "path": {
+      "type": "string",
+      "description": "URL path pattern, e.g. '/v1/speech/sw/transcribe'."
+    },
+    "model_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-reference to model-registry entries backing this endpoint."
+    },
+    "supported_languages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ISO codes of languages this endpoint supports."
+    },
+    "authentication": {
+      "type": "string",
+      "enum": ["api_key", "oauth2", "none_internal_only"]
+    },
+    "rate_limit": {
+      "type": "string",
+      "description": "e.g. '100 requests/minute', 'tier-dependent'."
+    },
+    "sdk_support": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["python", "javascript", "flutter", "go", "java", "rust", "swift", "kotlin", "csharp"]
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "internal_alpha", "beta", "generally_available", "deprecated"]
+    },
+    "documentation_url": {
+      "type": "string"
+    },
+    "products_using_it": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
