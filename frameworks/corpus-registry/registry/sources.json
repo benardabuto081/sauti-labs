@@ -28,6 +28,20 @@
       "digitization_method": "born_digital",
       "linked_dataset_ids": ["dholuo-storybook-text-v1"],
       "notes": "Confirmed via web search (2026-07-11) that the African Storybook Project publishes openly licensed children's storybooks in Dholuo among 236+ African languages. Each individual storybook's specific CC license variant (BY vs BY-NC) must be confirmed per-story before dataset derivation, since license terms are set per title rather than uniformly across the whole collection."
+    },
+    {
+      "source_id": "kiswahili-african-storybook-collection-v1",
+      "title": "African Storybook Project - Kiswahili Story Collection",
+      "languages": ["sw"],
+      "source_type": "educational_resource",
+      "author_or_publisher": "Saide (South African Institute for Distance Education) - African Storybook Initiative",
+      "publication_date": "2014",
+      "copyright_status": "licensed",
+      "license_details": "Creative Commons Attribution 3.0 International License (CC BY 3.0), confirmed directly on individual Kiswahili storybook pages (e.g. global-asp.github.io/storybooks-swahili). Attribution required to authors, illustrators, translators, and the African Storybook initiative as publisher.",
+      "status": "identified",
+      "digitization_method": "born_digital",
+      "linked_dataset_ids": ["kiswahili-storybook-text-v1"],
+      "notes": "Confirmed via web search (2026-07-11): Kiswahili is one of the most extensively represented languages on the platform, with dedicated collections across multiple regional mirrors (Storybooks Kenya, Storybooks Tanzania, Global Storybooks). License explicitly confirmed as CC BY 3.0 on sampled story pages, more permissive than the CC BY-NC variant used by some other language collections on the same platform."
     }
   ]
 }

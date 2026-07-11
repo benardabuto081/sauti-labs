@@ -16,6 +16,22 @@
       "quality_score": 0,
       "benchmark_results": [],
       "models_using_it": []
+    },
+    {
+      "dataset_id": "kiswahili-storybook-text-v1",
+      "name": "Kiswahili African Storybook Text Corpus",
+      "languages": ["sw"],
+      "type": "text",
+      "collection_method": "community_contribution",
+      "license": "CC-BY-3.0",
+      "version": "1.0.0",
+      "status": "collecting",
+      "text_size_tokens": 0,
+      "contributors": ["Saide - African Storybook Initiative"],
+      "collection_date": "2026-07-11",
+      "quality_score": 0,
+      "benchmark_results": [],
+      "models_using_it": []
     }
   ]
 }
