@@ -1,4 +1,19 @@
 {
   "$comment": "Central registry of all written-text corpus sources across the Sauti Labs platform. Each entry must conform to frameworks/corpus-registry/schema/corpus-source.schema.json. Tracks provenance and copyright status distinct from dataset-framework's processed dataset registry.",
-  "sources": []
+  "sources": [
+    {
+      "source_id": "dholuo-bible-translation-v1",
+      "title": "Muma Manyien - Dholuo Bible Translation",
+      "languages": ["luo"],
+      "source_type": "literature",
+      "author_or_publisher": "Bible Society of Kenya",
+      "publication_date": "2018",
+      "copyright_status": "unknown_pending_review",
+      "license_details": "Publisher and permission terms not yet formally verified by Sauti Labs; must be confirmed directly with the Bible Society of Kenya before use in any dataset.",
+      "status": "identified",
+      "digitization_method": "not_applicable",
+      "linked_dataset_ids": [],
+      "notes": "Identified as a candidate source due to high translation quality and full-text coverage in Dholuo, a severely under-resourced language. Status intentionally set to 'unknown_pending_review' and copyright_status left unresolved per corpus-registry's Copyright Discipline rule — must not be used to derive any dataset until formally cleared."
+    }
+  ]
 }
