@@ -39,3 +39,22 @@ jobs:
             exit 1
           fi
           echo "Encoding verified clean (UTF-8 without BOM)."
+
+  schema-validation:
+    name: Registry Schema Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate all registry entries against their schemas
+        run: npm run validate:registries
