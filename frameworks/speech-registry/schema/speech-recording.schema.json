@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/speech-recording.schema.json",
+  "title": "Speech Recording",
+  "description": "Defines the required metadata for every individual speech recording in the Sauti Labs platform, per ADR-0002. Each recording references a speech-source entry (its origin) and, where applicable, a speaker_id from speaker-registry (never a real identity).",
+  "type": "object",
+  "required": [
+    "recording_id",
+    "source_id",
+    "language",
+    "duration_seconds",
+    "sample_rate_hz",
+    "audio_format",
+    "status"
+  ],
+  "properties": {
+    "recording_id": {
+      "type": "string",
+      "description": "Unique identifier, e.g. 'dholuo-radio-ramogi-2024-clip-0001'."
+    },
+    "source_id": {
+      "type": "string",
+      "description": "Cross-reference to the speech-source entry this recording was derived from."
+    },
+    "speaker_id": {
+      "type": "string",
+      "pattern": "^spk-[a-zA-Z0-9]{8,}$",
+      "description": "Cross-reference to a pseudonymous speaker-registry entry. Omit entirely if speaker is unknown or not applicable (e.g. synthetic audio, broadcast with unidentified speakers)."
+    },
+    "language": {
+      "type": "string",
+      "description": "ISO code of the language spoken in this recording."
+    },
+    "duration_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "sample_rate_hz": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "e.g. 16000, 44100, 48000."
+    },
+    "channel_count": {
+      "type": "integer",
+      "enum": [1, 2],
+      "description": "1 = mono, 2 = stereo."
+    },
+    "audio_format": {
+      "type": "string",
+      "enum": ["wav", "mp3", "flac", "ogg", "m4a", "other"]
+    },
+    "checksum_sha256": {
+      "type": "string",
+      "description": "SHA-256 hash of the audio file, for version integrity verification."
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version, e.g. '1.0.0'. A new version is created for any re-processing (denoising, re-segmentation), never an overwrite."
+    },
+    "technical_quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Automated, objective quality score (e.g. from silence/clipping/SNR detection). Distinct from annotation-framework's human-reviewed quality_score - these measure different things and must not be conflated."
+    },
+    "transcription_available": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["identified", "acquired", "processing", "validated", "excluded"]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

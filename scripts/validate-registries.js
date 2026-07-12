@@ -45,6 +45,20 @@ const REGISTRIES = [
     isRegistryFile: true
   },
   {
+    name: 'speech-registry (sources)',
+    schema: 'frameworks/speech-registry/schema/speech-source.schema.json',
+    registry: 'frameworks/speech-registry/registry/sources.json',
+    arrayKey: 'sources',
+    isRegistryFile: true
+  },
+  {
+    name: 'speech-registry (recordings)',
+    schema: 'frameworks/speech-registry/schema/speech-recording.schema.json',
+    registry: 'frameworks/speech-registry/registry/recordings.json',
+    arrayKey: 'recordings',
+    isRegistryFile: true
+  },
+  {
     name: 'model-registry',
     schema: 'frameworks/model-registry/schema/model.schema.json',
     registry: 'frameworks/model-registry/registry/models.json',

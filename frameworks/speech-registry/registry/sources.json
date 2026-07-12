@@ -1,0 +1,4 @@
+{
+  "$comment": "Central registry of all speech sources (origins of recording batches) across the Sauti Labs platform. Each entry must conform to frameworks/speech-registry/schema/speech-source.schema.json. Distinct from corpus-registry (written text). Copyright status must never be assumed - see Copyright Discipline in this framework's README.",
+  "sources": []
+}

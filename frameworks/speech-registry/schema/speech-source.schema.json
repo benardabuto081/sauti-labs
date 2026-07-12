@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/speech-source.schema.json",
+  "title": "Speech Source",
+  "description": "Defines the required metadata for every speech source (origin of a batch of recordings) in the Sauti Labs platform, per ADR-0002 and the Master Blueprint's Speech Data Platform (Pillar III). A source may yield many individual recordings, tracked separately in speech-recording.schema.json.",
+  "type": "object",
+  "required": [
+    "source_id",
+    "title",
+    "languages",
+    "collection_method",
+    "copyright_status",
+    "status"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "description": "Unique identifier, e.g. 'dholuo-radio-ramogi-archive-2024'."
+    },
+    "title": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ISO codes of languages covered, cross-referenced to Codex Layer 2."
+    },
+    "collection_method": {
+      "type": "string",
+      "enum": [
+        "broadcast_media",
+        "radio_archive",
+        "podcast",
+        "community_recording",
+        "field_recording",
+        "institutional_partnership",
+        "public_dataset",
+        "synthetic",
+        "call_center",
+        "court_proceeding",
+        "religious_institution",
+        "other"
+      ]
+    },
+    "recording_condition": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["studio", "field", "broadcast_quality", "phone_call", "noisy_environment", "mixed"]
+      }
+    },
+    "author_or_publisher": {
+      "type": "string"
+    },
+    "acquisition_date": {
+      "type": "string",
+      "description": "ISO 8601 date this source was acquired by Sauti Labs."
+    },
+    "copyright_status": {
+      "type": "string",
+      "enum": [
+        "public_domain",
+        "licensed",
+        "permission_granted",
+        "fair_use_research",
+        "proprietary_internal",
+        "unknown_pending_review"
+      ],
+      "description": "Copyright must never be assumed. 'unknown_pending_review' blocks use until resolved, mirroring corpus-registry's Copyright Discipline rule."
+    },
+    "license_details": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["identified", "acquiring", "processing", "available", "excluded"]
+    },
+    "linked_dataset_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-reference to dataset-framework registry entries derived from this source."
+    },
+    "linked_recording_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-reference to speech-recording.schema.json entries derived from this source."
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
