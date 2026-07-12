@@ -38,6 +38,13 @@ const REGISTRIES = [
     isRegistryFile: true
   },
   {
+    name: 'speaker-registry',
+    schema: 'frameworks/speaker-registry/schema/speaker.schema.json',
+    registry: 'frameworks/speaker-registry/registry/speakers.json',
+    arrayKey: 'speakers',
+    isRegistryFile: true
+  },
+  {
     name: 'model-registry',
     schema: 'frameworks/model-registry/schema/model.schema.json',
     registry: 'frameworks/model-registry/registry/models.json',

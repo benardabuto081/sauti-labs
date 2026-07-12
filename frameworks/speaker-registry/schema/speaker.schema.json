@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/speaker.schema.json",
+  "title": "Speaker",
+  "description": "Defines the required metadata for every pseudonymous speaker profile in the Sauti Labs platform, per ADR-0002. This schema intentionally excludes all personally identifying information (name, contact details, exact location, date of birth, photographs) by design. Operational identity management (consent forms, contact records) lives in a separate secure system entirely outside this repository.",
+  "type": "object",
+  "required": [
+    "speaker_id",
+    "languages",
+    "consent"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "speaker_id": {
+      "type": "string",
+      "pattern": "^spk-[a-zA-Z0-9]{8,}$",
+      "description": "Pseudonymous identifier, e.g. 'spk-a1b2c3d4'. Never a real name or derivable from one."
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ISO codes of languages this speaker speaks, cross-referenced to Codex Layer 2."
+    },
+    "dialect_region": {
+      "type": "string",
+      "description": "Broad dialect or regional area only, e.g. 'Alego, Kenya' or 'Zanzibar coastal'. Never a village name or GPS coordinate."
+    },
+    "age_range": {
+      "type": "string",
+      "enum": ["under_18", "18-24", "25-34", "35-44", "45-54", "55-64", "65_plus", "undisclosed"],
+      "description": "Broad age bracket only. Exact date of birth must never be recorded in this schema."
+    },
+    "gender": {
+      "type": "string",
+      "enum": ["male", "female", "other", "undisclosed"]
+    },
+    "speaker_type": {
+      "type": "string",
+      "enum": ["native", "l2_fluent", "l2_learner", "heritage_speaker", "undisclosed"]
+    },
+    "speech_style": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["conversational", "read_speech", "broadcast", "spontaneous", "scripted", "singing"]
+      }
+    },
+    "consent": {
+      "type": "object",
+      "description": "Structured consent governance object, per ADR-0002. Consent is never a simple boolean.",
+      "required": ["status", "scope"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["obtained", "implied_public_broadcast", "not_applicable_synthetic", "withdrawn", "unknown_pending_review"]
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["research", "model_training", "redistribution", "commercial_use"]
+          },
+          "description": "Permitted uses. A speaker may consent to some uses and not others."
+        },
+        "consent_agreement_version": {
+          "type": "string",
+          "description": "Version identifier of the consent agreement text, e.g. 'v1.0'. Required once status is 'obtained'."
+        },
+        "consent_date": {
+          "type": "string",
+          "description": "ISO 8601 date consent was obtained."
+        }
+      }
+    },
+    "contributed_recording_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-reference to speech-registry recording entries this speaker contributed to."
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
