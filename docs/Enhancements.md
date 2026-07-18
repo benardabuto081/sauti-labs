@@ -35,3 +35,27 @@ Items here are candidates for future milestones, not commitments.
   wiring a check into CI that flags any future corpus addition
   containing unreviewed CC-BY-NC content before it reaches the
   dataset registry.
+
+
+  ## From M2.14 (Speech Infrastructure)
+
+- **Real speech source/recording identified, pending acquisition**:
+  "Common Voice Scripted Speech 26.0 - Swahili" on Mozilla's Data
+  Collective (mozilladatacollective.com), license CC0-1.0, locale
+  `sw`, 20.88GB total. Confirmed via account login and direct
+  browsing 2026-07-12. Deferred acquisition until WiFi access is
+  available (too large for mobile data). When resumed: extract one
+  small real clip, register it in `speech-registry` (source +
+  recording entries), decide whether a corresponding anonymous
+  speaker entry is warranted given Common Voice's anonymized,
+  self-reported demographic model.
+- **Rejected alternative**: "Read Speech in Kenyan Swahili" (CLEAR
+  Global, 6 hours, single anonymous male speaker) was also found and
+  considered, but rejected due to CC-BY-NC-4.0 licensing — consistent
+  with the CC-BY-NC exclusion precedent set in M2.13 for Kiswahili
+  text sources.
+- **Confirmed dead end**: `global-asp/gsn-audio` (GlobalStorybooks.net
+  narrated audio) documents a Swahili reader (named individual, Sophia
+  Turunesh Mufuruki) but the actual `sw` audio folder does not yet
+  exist in the repository. No Dholuo (`luo`) audio exists in this
+  source at all. Not usable currently for either active language.
