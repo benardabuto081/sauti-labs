@@ -59,3 +59,22 @@ Items here are candidates for future milestones, not commitments.
   Turunesh Mufuruki) but the actual `sw` audio folder does not yet
   exist in the repository. No Dholuo (`luo`) audio exists in this
   source at all. Not usable currently for either active language.
+
+  - **Additional confirmed dead ends (2026-07-12)**: `global-asp/global-asp.github.io/audio` folder checked directly
+  (languages present: ar, asp, eo, es, fa, gu, nn, no, sv, tl, zh) —
+  no `luo` or `sw` folder. Hugging Face's `datasets-server` API for
+  both `fsicoli/common_voice_17_0` and `mozilla-foundation/common_voice_17_0`
+  returned errors — the official Mozilla namespace is gated/empty via
+  API (requires dataset-terms acceptance through the website, not
+  freely queryable). Confirms: real audio resources for Dholuo and
+  Kiswahili are genuinely much scarcer than text resources were.
+- **Decision (2026-07-12)**: Paused end-to-end speech validation
+  until WiFi access is available (founder is on mobile data for
+  approximately one month). When resumed, two viable paths identified:
+  (1) download the already-confirmed 20.88GB Common Voice Swahili
+  archive from Mozilla Data Collective and extract one real clip, or
+  (2) record a short, genuinely consented sample of the founder's own
+  voice as an even stronger test case (exercises real consent capture,
+  needs no download at all). Framework itself (`speech-registry`,
+  `speaker-registry`) is already fully built, schema-validated, and
+  CI-verified — only the real-file walkthrough remains.
