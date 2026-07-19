@@ -58,3 +58,7 @@ jobs:
 
       - name: Validate all registry entries against their schemas
         run: npm run validate:registries
+
+      - name: Run annotation-framework SDK smoke tests
+        run: node scripts/test-annotation-sdk.js
+
