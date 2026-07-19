@@ -80,6 +80,13 @@ const REGISTRIES = [
     isRegistryFile: true
   },
   {
+    name: 'annotation-framework (records)',
+    schema: 'frameworks/annotation-framework/schema/annotation-record.schema.json',
+    registry: 'frameworks/annotation-framework/registry/records.json',
+    arrayKey: 'records',
+    isRegistryFile: true
+  },
+  {
     name: 'api-framework',
     schema: 'frameworks/api-framework/schema/api-endpoint.schema.json',
     registry: 'frameworks/api-framework/registry/endpoints.json',

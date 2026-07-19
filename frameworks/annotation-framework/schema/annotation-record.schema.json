@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sauti-labs.dev/schemas/annotation-record.schema.json",
+  "title": "Annotation Record",
+  "description": "Defines a single annotated content item belonging to an annotation-framework task. A task (annotation-task.schema.json) tracks who did the work and its overall status/quality; a record is the actual annotated content itself - one corrected sentence, one translation pair, one labeled span, etc.",
+  "type": "object",
+  "required": [
+    "record_id",
+    "task_id",
+    "source_ref",
+    "annotation_type",
+    "content",
+    "status"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "description": "Unique identifier, e.g. 'kiswahili-storybook-0001-transcription-line-01'."
+    },
+    "task_id": {
+      "type": "string",
+      "description": "Cross-reference to the owning annotation-task entry."
+    },
+    "source_ref": {
+      "type": "string",
+      "description": "Reference to the original content being annotated, e.g. a file path, dataset_id, or recording_id."
+    },
+    "annotation_type": {
+      "type": "string",
+      "enum": [
+        "transcription",
+        "translation",
+        "speaker_labeling",
+        "part_of_speech_tagging",
+        "named_entity_recognition",
+        "sentiment_labeling",
+        "audio_quality_review",
+        "consensus_validation",
+        "other"
+      ],
+      "description": "Must match the parent task's annotation_type."
+    },
+    "content": {
+      "type": "object",
+      "description": "The actual annotated content. Shape depends on annotation_type - e.g. { text, corrected_text } for transcription review, { source_text, target_text, target_language } for translation, { text, entities: [...] } for NER. Intentionally loosely typed here since content shape varies; specific shapes should be documented in this framework's README as they are first used.",
+      "minProperties": 1
+    },
+    "annotator_id": {
+      "type": "string",
+      "description": "Pseudonymous or role-based identifier of who produced this record, e.g. 'founder-review' or an annotator ID. Never a real name, consistent with speaker-registry's privacy-by-architecture pattern."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Annotator's or model's self-reported confidence in this record, if applicable."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "submitted", "reviewed", "accepted", "rejected"]
+    },
+    "created_date": {
+      "type": "string",
+      "description": "ISO 8601 date."
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
