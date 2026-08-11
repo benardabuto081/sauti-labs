@@ -71,3 +71,6 @@ jobs:
       - name: Run corpus-registry SDK smoke tests
         run: node scripts/test-corpus-registry-sdk.js
 
+      - name: Run speaker-registry SDK smoke tests
+        run: node scripts/test-speaker-registry-sdk.js
+
