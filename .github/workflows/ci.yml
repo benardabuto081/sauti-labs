@@ -65,3 +65,6 @@ jobs:
       - name: Run benchmark-framework SDK smoke tests
         run: node scripts/test-benchmark-sdk.js
 
+      - name: Run model-registry SDK smoke tests
+        run: node scripts/test-model-registry-sdk.js
+
