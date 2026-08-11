@@ -62,3 +62,6 @@ jobs:
       - name: Run annotation-framework SDK smoke tests
         run: node scripts/test-annotation-sdk.js
 
+      - name: Run benchmark-framework SDK smoke tests
+        run: node scripts/test-benchmark-sdk.js
+
