@@ -80,3 +80,6 @@ jobs:
       - name: Run language-program-framework SDK smoke tests
         run: node scripts/test-language-program-sdk.js
 
+      - name: Run api-framework SDK smoke tests
+        run: node scripts/test-api-framework-sdk.js
+
