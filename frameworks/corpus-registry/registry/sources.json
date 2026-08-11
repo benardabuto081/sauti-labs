@@ -4,7 +4,9 @@
     {
       "source_id": "dholuo-bible-translation-v1",
       "title": "Muma Manyien - Dholuo Bible Translation",
-      "languages": ["luo"],
+      "languages": [
+        "luo"
+      ],
       "source_type": "literature",
       "author_or_publisher": "Bible Society of Kenya",
       "publication_date": "2018",
@@ -18,7 +20,9 @@
     {
       "source_id": "dholuo-african-storybook-collection-v1",
       "title": "African Storybook Project - Dholuo Story Collection",
-      "languages": ["luo"],
+      "languages": [
+        "luo"
+      ],
       "source_type": "educational_resource",
       "author_or_publisher": "Saide (South African Institute for Distance Education) - African Storybook Initiative",
       "publication_date": "2014",
@@ -26,13 +30,17 @@
       "license_details": "Creative Commons Attribution (CC BY), confirmed per-story via the global-asp/asp-source GitHub repository. All 6 available Dholuo stories confirmed CC-BY (no CC-BY-NC entries found in this language's collection).",
       "status": "available",
       "digitization_method": "born_digital",
-      "linked_dataset_ids": ["dholuo-storybook-text-v1"],
+      "linked_dataset_ids": [
+        "dholuo-storybook-text-v1"
+      ],
       "notes": "Fetched 2026-07-11 via global-asp/asp-source (github.com/global-asp/asp-source), the machine-readable Markdown source repository for the African Storybook Project. 6 stories downloaded and verified, all licensed CC-BY, none excluded. Real word count: 486 across 6 documents."
     },
     {
       "source_id": "kiswahili-african-storybook-collection-v1",
       "title": "African Storybook Project - Kiswahili Story Collection",
-      "languages": ["sw"],
+      "languages": [
+        "sw"
+      ],
       "source_type": "educational_resource",
       "author_or_publisher": "Saide (South African Institute for Distance Education) - African Storybook Initiative",
       "publication_date": "2014",
@@ -40,7 +48,9 @@
       "license_details": "Mixed per-story licensing confirmed via direct download and inspection: 110 of 125 stories (88%) are CC-BY 3.0; 15 of 125 (12%) are CC-BY-NC and have been excluded from the production dataset. Only the 110 CC-BY stories are reflected in the linked dataset.",
       "status": "available",
       "digitization_method": "born_digital",
-      "linked_dataset_ids": ["kiswahili-storybook-text-v1"],
+      "linked_dataset_ids": [
+        "kiswahili-storybook-text-v1"
+      ],
       "notes": "Fetched 2026-07-11 via global-asp/asp-source (github.com/global-asp/asp-source). Initial assumption of uniform CC-BY licensing (recorded 2026-07-11 earlier the same day) was corrected after actually downloading and inspecting all 125 files individually — 15 CC-BY-NC stories were found and excluded, preserved separately on disk under languages/kiswahili/corpus/raw/excluded-cc-by-nc/ for provenance, not deleted. Real word count of the 110 included stories: 29,213."
     }
   ]

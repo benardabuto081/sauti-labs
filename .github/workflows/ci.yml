@@ -68,3 +68,6 @@ jobs:
       - name: Run model-registry SDK smoke tests
         run: node scripts/test-model-registry-sdk.js
 
+      - name: Run corpus-registry SDK smoke tests
+        run: node scripts/test-corpus-registry-sdk.js
+
