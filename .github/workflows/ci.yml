@@ -77,3 +77,6 @@ jobs:
       - name: Run speech-registry SDK smoke tests
         run: node scripts/test-speech-registry-sdk.js
 
+      - name: Run language-program-framework SDK smoke tests
+        run: node scripts/test-language-program-sdk.js
+
