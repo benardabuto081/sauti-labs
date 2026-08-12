@@ -27,7 +27,10 @@
   ],
   "writing_system": "Latin",
   "number_of_speakers": 200000000,
-  "datasets": ["kiswahili-storybook-text-v1"],
+  "datasets": [
+    "kiswahili-storybook-text-v1",
+    "kiswahili-common-voice-speech-v1"
+  ],
   "models": [],
   "known_challenges": [
     "Limited annotated speech corpora compared to global languages",

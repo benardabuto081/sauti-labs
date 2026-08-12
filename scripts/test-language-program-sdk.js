@@ -6,6 +6,11 @@
  * to prove the composite query works correctly on real production
  * data) and the temporary test language (to prove it correctly
  * reports zero counts for a language with no real footprint yet).
+ *
+ * Note: swSummary.datasetCount is asserted as >= 2 rather than a
+ * fixed number, since real datasets are added to Kiswahili over time
+ * (M2.13 text corpus, M2.24 speech corpus) - this test should keep
+ * passing as real data grows, not assume a frozen count.
  */
 
 const fs = require('fs');
@@ -67,12 +72,17 @@ try {
 
   console.log('Test 3: getLanguageSummary() on REAL Kiswahili data returns correct real counts');
   const swSummary = getLanguageSummary('sw');
-  assert(swSummary.datasetCount === 1, `Kiswahili has exactly 1 real dataset (got ${swSummary.datasetCount})`);
+  assert(swSummary.datasetCount >= 2, `Kiswahili has at least 2 real datasets (got ${swSummary.datasetCount})`);
   assert(
     swSummary.datasetIds.includes('kiswahili-storybook-text-v1'),
     'Kiswahili dataset list includes the real kiswahili-storybook-text-v1'
   );
-  assert(swSummary.corpusSourceCount === 1, `Kiswahili has exactly 1 real corpus source (got ${swSummary.corpusSourceCount})`);
+  assert(
+    swSummary.datasetIds.includes('kiswahili-common-voice-speech-v1'),
+    'Kiswahili dataset list includes the real kiswahili-common-voice-speech-v1'
+  );
+  assert(swSummary.corpusSourceCount >= 1, `Kiswahili has at least 1 real corpus source (got ${swSummary.corpusSourceCount})`);
+  assert(swSummary.speechRecordingCount >= 100, `Kiswahili has at least 100 real speech recordings (got ${swSummary.speechRecordingCount})`);
 
   console.log('Test 4: getLanguageSummary() on the new test language returns all zero counts');
   const testSummary = getLanguageSummary(TEST_ISO_CODE);

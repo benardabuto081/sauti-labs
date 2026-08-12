@@ -4,14 +4,18 @@
     {
       "dataset_id": "dholuo-storybook-text-v1",
       "name": "Dholuo African Storybook Text Corpus",
-      "languages": ["luo"],
+      "languages": [
+        "luo"
+      ],
       "type": "text",
       "collection_method": "community_contribution",
       "license": "CC-BY-4.0",
       "version": "1.0.0",
       "status": "ready",
       "text_size_tokens": 486,
-      "contributors": ["Saide - African Storybook Initiative"],
+      "contributors": [
+        "Saide - African Storybook Initiative"
+      ],
       "collection_date": "2026-07-11",
       "quality_score": 0,
       "benchmark_results": [],
@@ -20,15 +24,39 @@
     {
       "dataset_id": "kiswahili-storybook-text-v1",
       "name": "Kiswahili African Storybook Text Corpus",
-      "languages": ["sw"],
+      "languages": [
+        "sw"
+      ],
       "type": "text",
       "collection_method": "community_contribution",
       "license": "CC-BY-3.0",
       "version": "1.0.0",
       "status": "ready",
       "text_size_tokens": 29213,
-      "contributors": ["Saide - African Storybook Initiative"],
+      "contributors": [
+        "Saide - African Storybook Initiative"
+      ],
       "collection_date": "2026-07-11",
+      "quality_score": 0,
+      "benchmark_results": [],
+      "models_using_it": []
+    },
+    {
+      "dataset_id": "kiswahili-common-voice-speech-v1",
+      "name": "Kiswahili Common Voice Speech Corpus (Batch 1)",
+      "languages": [
+        "sw"
+      ],
+      "type": "speech",
+      "collection_method": "community_contribution",
+      "license": "CC0-1.0",
+      "version": "1.0.0",
+      "status": "ready",
+      "audio_hours": 0.159,
+      "contributors": [
+        "Mozilla Common Voice contributors"
+      ],
+      "collection_date": "2026-08-12",
       "quality_score": 0,
       "benchmark_results": [],
       "models_using_it": []
