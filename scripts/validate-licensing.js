@@ -4,12 +4,12 @@
  * Verifies the split-licensing architecture (ADR-0003) is intact:
  * - Every language program directory has a NOTICE.md.
  * - Every corpus-registry source with copyright_status "licensed"
- *   has non-empty license_details (an honest license claim needs
- *   actual details, not just a status flag).
+ *   has non-empty license_details.
+ * - Every speech-registry source with copyright_status "licensed"
+ *   has non-empty license_details.
  * - Every corpus-registry source with copyright_status
  *   "unknown_pending_review" is NOT referenced as linked_dataset_ids
- *   on any dataset currently marked "ready" (i.e. we never actually
- *   shipped a dataset built on unresolved-copyright content).
+ *   on any dataset currently marked "ready".
  *
  * Exits non-zero if any check fails, so this can gate CI.
  */
@@ -55,7 +55,22 @@ for (const source of corpusRegistry.sources) {
     if (source.license_details && source.license_details.trim().length > 0) {
       pass(`${source.source_id}: has license_details`);
     } else {
-      fail(`${source.source_id}: copyright_status is "licensed" but license_details is empty - an honest license claim needs actual details`);
+      fail(`${source.source_id}: copyright_status is "licensed" but license_details is empty`);
+    }
+  }
+}
+
+console.log('');
+console.log('Check 2b: Every "licensed" speech source has non-empty license_details');
+const speechSourceRegistry = JSON.parse(
+  fs.readFileSync(path.join(REPO_ROOT, 'frameworks/speech-registry/registry/sources.json'), 'utf8')
+);
+for (const source of speechSourceRegistry.sources) {
+  if (source.copyright_status === 'licensed') {
+    if (source.license_details && source.license_details.trim().length > 0) {
+      pass(`${source.source_id}: has license_details`);
+    } else {
+      fail(`${source.source_id}: copyright_status is "licensed" but license_details is empty`);
     }
   }
 }

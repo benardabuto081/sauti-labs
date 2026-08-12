@@ -1,4 +1,19 @@
 {
   "$comment": "Central registry of all individual speech recordings across the Sauti Labs platform. Each entry must conform to frameworks/speech-registry/schema/speech-recording.schema.json. Each entry references a source_id (this framework) and optionally a speaker_id (speaker-registry). Per ADR-0002, recordings linked to a speaker with unresolved or withdrawn consent must not be used to derive a dataset.",
-  "recordings": []
+  "recordings": [
+    {
+      "recording_id": "kiswahili-common-voice-26-clip-39497148",
+      "source_id": "kiswahili-common-voice-26-v1",
+      "language": "sw",
+      "duration_seconds": 5.256,
+      "sample_rate_hz": 48000,
+      "channel_count": 1,
+      "audio_format": "mp3",
+      "checksum_sha256": "DAA825C4C2F6D5028CC18D108D42387070C9CEA891B64BF193518C7A511899FB",
+      "version": "1.0.0",
+      "transcription_available": true,
+      "status": "validated",
+      "notes": "Sentence: Vyombo vya kupikia pilau la viazi. Self-reported demographics (per Common Voice metadata, NOT a speaker-registry entry since contributor is anonymous): age twenties, gender male_masculine, accent Kiswahili Sanifu (EA). Real duration sourced from Common Voice own clip_durations.tsv, not estimated."
+    }
+  ]
 }
