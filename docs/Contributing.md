@@ -73,3 +73,16 @@ the language program.
 Per the AI CTO Constitution, disagreement and technical challenge are
 welcome and expected. If you believe a standard in this document is
 wrong, raise it with evidence — do not silently ignore it.
+## Licensing Expectations for Contributions
+
+By submitting a Contribution to `frameworks/`, `scripts/`, `.github/`,
+or `docs/`, you agree it will be licensed under the Apache License,
+Version 2.0, consistent with the rest of the infrastructure layer.
+
+If you are contributing language data (corpus text, speech recordings,
+lexicon entries) under `languages/`, that content retains its own
+license - it is NOT relicensed under Apache 2.0 merely by being added
+to this repository. You must register it in the relevant framework
+(`corpus-registry` or `speech-registry`) with an honestly-set
+`copyright_status` before it can be used. See
+`languages/LICENSE-DATA.md` for the full explanation.

@@ -1,0 +1,53 @@
+Sauti Labs
+Copyright the Sauti Labs project contributors.
+
+This product includes software developed by the Sauti Labs project
+(https://github.com/benardabuto081/sauti-labs), licensed under the
+Apache License, Version 2.0. See LICENSE for the full license text.
+
+================================================================================
+SCOPE OF THIS LICENSE - READ BEFORE REUSING ANYTHING FROM THIS REPOSITORY
+================================================================================
+
+This repository uses a SPLIT LICENSING ARCHITECTURE. Not everything in
+this repository is covered by the Apache License, Version 2.0.
+
+COVERED BY APACHE LICENSE 2.0 (free to reuse under its terms):
+
+  - frameworks/            (schemas, registries, SDKs, all framework code)
+  - scripts/                (developer tooling, automation, validation)
+  - .github/                (CI/CD workflows)
+  - package.json, package-lock.json
+  - docs/                   (Architecture.md, ADRs, Contributing.md,
+                              Development.md, Enhancements.md, and other
+                              technical/engineering documentation)
+  - Sauti Labs-authored registry and schema metadata (i.e. the JSON
+    entries WE compiled describing a dataset or source - see the
+    important distinction below)
+
+NOT COVERED BY APACHE LICENSE 2.0 - CHECK SEPARATELY BEFORE REUSE:
+
+  - languages/*/corpus/, languages/*/speech/, languages/*/lexicon/,
+    languages/*/benchmarks/ - all third-party source content
+  - Any CC-BY, CC-BY-NC, CC0, or other externally-licensed material,
+    regardless of where it physically sits in this repository
+  - Future speech recordings acquired from external sources
+  - Future trained model weights and other proprietary assets, which
+    will be licensed separately and explicitly, on a per-asset basis
+
+IMPORTANT DISTINCTION: METADATA VS. CONTENT
+
+The JSON entries inside frameworks/*/registry/ (e.g. a corpus-registry
+entry describing the African Storybook Project) are Sauti Labs'
+original compiled metadata ABOUT a third-party source, and that
+metadata entry is covered by Apache 2.0. This does NOT mean the
+underlying source content the entry describes is Apache-licensed.
+The two are separate. Always check the specific source or dataset's
+own license_details field, or the file's own embedded attribution,
+before reusing the actual content.
+
+Storing third-party content inside this repository does not transfer
+ownership of that content to Sauti Labs, and does not relicense it
+under Apache 2.0. See languages/LICENSE-DATA.md for the full
+explanation, and docs/architecture/ADR-0003.md for the architectural
+reasoning behind this split.

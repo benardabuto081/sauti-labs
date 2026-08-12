@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Building Africa's Speech and Language Intelligence Infrastructure",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benardabuto081/sauti-labs.git"

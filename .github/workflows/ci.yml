@@ -83,3 +83,6 @@ jobs:
       - name: Run api-framework SDK smoke tests
         run: node scripts/test-api-framework-sdk.js
 
+      - name: Validate licensing architecture
+        run: node scripts/validate-licensing.js
+
